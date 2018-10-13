@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackageIndexTool", "PackageIndexTool\PackageIndexTool.csproj", "{BC34A74A-C568-48D9-8847-2DF866587DB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhilLibX", "..\..\PhilLibX\src\PhilLibX\PhilLibX.csproj", "{8F5C1BA4-88C1-4177-B91B-DD093DC849B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC34A74A-C568-48D9-8847-2DF866587DB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC34A74A-C568-48D9-8847-2DF866587DB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC34A74A-C568-48D9-8847-2DF866587DB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC34A74A-C568-48D9-8847-2DF866587DB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F5C1BA4-88C1-4177-B91B-DD093DC849B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F5C1BA4-88C1-4177-B91B-DD093DC849B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F5C1BA4-88C1-4177-B91B-DD093DC849B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F5C1BA4-88C1-4177-B91B-DD093DC849B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {789EE696-66E6-4B97-B7B1-73E3B7E51665}
+	EndGlobalSection
+EndGlobal
