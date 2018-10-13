@@ -1,6 +1,6 @@
 # GreyhoundPackageIndex
 
-These are Package Index lists that are used with [Greyhound](https://github.com/Scobalula/Greyhound), including Bo2, Bo3, and Bo4, this is a continuation of DTZxPorter's [CommunityNameDB](https://github.com/dtzxporter/CommunityNameDB/blob/master/spec.md).
+These are Package Index lists that are used with [Greyhound](https://github.com/Scobalula/Greyhound), including Bo2, Bo3, and Bo4, this is a continuation of DTZxPorter's [CommunityNameDB](https://github.com/dtzxporter/CommunityNameDB).
 
 For the latest compiled package index files, check the [Releases](https://github.com/Scobalula/GreyhoundPackageIndex/releases) section.
 
