@@ -16,7 +16,7 @@ These are people who have contributed to this repository:
 
 * DTZxPorter - Previous Package Indexes + BO4 Hash Algorithm
 
-Contributors
+Name Contributors
 
 * BlackDeathZM
 * JerriGaming
