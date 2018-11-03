@@ -41,15 +41,15 @@ namespace PackageIndexTool
                     {
                         // Decompile it
                         case ".wni":
-                            Decompile(index, args[0]);
+                            Decompile(index, args[i]);
                             break;
                         // Compile it
                         case ".csv":
-                            CompileFromCSV(index, args[0]);
+                            CompileFromCSV(index, args[i]);
                             break;
                         // Compile it and generate hashes
                         case ".txt":
-                            CompileFromTXT(index, args[0]);
+                            CompileFromTXT(index, args[i]);
                             break;
                         /// Invalid
                         default:
