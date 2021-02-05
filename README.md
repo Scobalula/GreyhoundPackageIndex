@@ -21,6 +21,7 @@ These are people who have contributed to this repository:
 * BlackDeathZM
 * JerriGaming
 * EthanC 
+* ThomasCat
 
 ## Disclaimer
 
