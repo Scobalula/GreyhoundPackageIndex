@@ -1,6 +1,6 @@
 Community Asset Naming Specification
 ====
-Below is the specification for our community effort for identifying and naming model, animation, and image assets in the latest Call of Duty title. The game currently ships without asset names.
+Below is the specification for our community effort for identifying and naming model, animation, and image assets in Black Ops 4 + CW. The game's currently ship without asset names. It is also suggested that you attempt to try and guess the names, hash the names using the hash algorithm then see if it matches with the hash in-game. This way you will get hash corrected names.
 
 When submitting name changes, you must copy the hash portion of the asset name, Ex: "xmodel_<260921f6390e9cb>" you would copy just the part inside of <>, then separate the actual name with a comma like so:
 
