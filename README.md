@@ -2,7 +2,7 @@
 
 These are Package Index lists that are used with [Greyhound](https://github.com/Scobalula/Greyhound), including Bo2, Bo3, and Bo4, this is a continuation of DTZxPorter's [CommunityNameDB](https://github.com/dtzxporter/CommunityNameDB).
 
-For Bo4 + BOCW Index Files, Click [Here](https://github.com/Scobalula/GreyhoundPackageIndex/tree/master/PackageIndexSources/FNV14A).
+For Bo4 + BOCW Index Files, Click [Here](https://github.com/Scobalula/GreyhoundPackageIndex/tree/master/PackageIndexSources/FNV1A).
 
 For the latest compiled package index files, check the [Releases](https://github.com/Scobalula/GreyhoundPackageIndex/releases) section. These are shipped with the following version of Greyhound after they are pushed.
 
