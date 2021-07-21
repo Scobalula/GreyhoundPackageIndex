@@ -1,34 +1,41 @@
-# GreyhoundPackageIndex
+# Greyhound Package Index
 
-These are Package Index lists that are used with [Greyhound](https://github.com/Scobalula/Greyhound), including Bo2, Bo3, and Bo4, this is a continuation of DTZxPorter's [CommunityNameDB](https://github.com/dtzxporter/CommunityNameDB).
+The Greyhound Package Index is an ongoing community effort to supply [Greyhound](https://github.com/Scobalula/Greyhound) with meaningful filenames for assets across various Call of Duty titles. It is a continuation of [DTZxPorter's](https://github.com/dtzxporter) [CommunityNameDB](https://github.com/dtzxporter/CommunityNameDB).
 
-For Bo4 + BOCW Index Files, Click [Here](https://github.com/Scobalula/GreyhoundPackageIndex/tree/master/PackageIndexSources/FNV1A).
+| Title | Package Indexes |
+|---|---|
+| Call of Duty: Black Ops Cold War | [strings](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_string.csv), [xanims](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xanims.csv), [ximages](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_ximages.csv), [xmaterials](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xmaterials.csv), [xmodels](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xmodels.csv), [xsounds](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xsounds.csv) |
+| Call of Duty: Black Ops 4 | [strings](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_string.csv), [xanims](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xanims.csv), [ximages](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_ximages.csv), [xmaterials](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xmaterials.csv), [xmodels](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xmodels.csv), [xsounds](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xsounds.csv) |
+| Call of Duty: Black Ops III | [sab](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/BO3/bo3_sab.csv) |
+| Call of Duty: Black Ops II | [ipak](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/BO2/bo2_ipak.csv), [sab](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/BO2/bo2_sab.csv) |
 
-For the latest compiled package index files, check the [Releases](https://github.com/Scobalula/GreyhoundPackageIndex/releases) section. These are shipped with the following version of Greyhound after they are pushed.
+## Package Index Tool
 
-For the PackageIndexTool to convert package files, Click [Here](https://github.com/Scobalula/GreyhoundPackageIndex/raw/master/PackageIndexTool/PackageIndexTool.exe), which will allow you to convert the index files to WNI, and decompile the WNI files to CSVs. Once compiled, copy the WNI file into the `package_index` folder and reload.
+[Package Index Tool](https://github.com/Scobalula/GreyhoundPackageIndex/tree/master/PackageIndexTool) is used to convert package indexes between the `.WNI`, `.CSV`, and `.TXT` formats.
 
-Please see [Specification](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSpecBo.md) before submitting your names, they will need to conform to it first. Don't bother using the GIT client, just file an [Issue](https://github.com/Scobalula/GreyhoundPackageIndex/issues) and someone will add them for you!
+The FNV-1a hash algorithm, provided by [DTZxPorter](https://github.com/dtzxporter), is used by both Black Ops Cold War and Black Ops 4.
 
-## Credits
+```cpp
+const uint64_t FNVPrime = 0x100000001B3;
+const uint64_t FNVOffset = 0xCBF29CE484222325;
 
-These are people who have contributed to this repository:
+uint64_t Hash(const char* Data, uint64_t Size)
+{
+    uint64_t Result = FNVOffset;
 
-* DTZxPorter - Previous Package Indexes + BO4 Hash Algorithm
+    for (uint64_t i = 0; i < Size; i++)
+    {
+        Result ^= Data[i];
+        Result *= FNVPrime;
+    }
 
-## Name Contributors
+    return Result;
+}
 
-* BlackDeathZM
-* JerriGaming
-* EthanC 
-* ThomasCat
+auto Example = Hash("void", strlen("void"));
+```
 
-## Disclaimer
 
-THE SOFTWARE AND DATA IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+## Contributing
+
+To contribute to the Package Index, [submit a new Issue](https://github.com/Scobalula/GreyhoundPackageIndex/issues) using the provided template. For unverified filenames, ensure that you adhere to the [Community Asset Naming Specification](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/.github/CONTRIBUTING.md).
