@@ -1,5 +1,7 @@
 # Greyhound Package Index
 
+[![Discord](https://img.shields.io/badge/chat-Discord-blue.svg)](https://discord.gg/RyqyThu)
+
 The Greyhound Package Index is an ongoing community effort to supply [Greyhound](https://github.com/Scobalula/Greyhound) with meaningful filenames for assets across various Call of Duty titles. It is a continuation of [DTZxPorter's](https://github.com/dtzxporter) [CommunityNameDB](https://github.com/dtzxporter/CommunityNameDB).
 
 | Title | Package Indexes |
