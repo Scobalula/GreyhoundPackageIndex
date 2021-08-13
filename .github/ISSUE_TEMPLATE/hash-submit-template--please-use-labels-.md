@@ -1,11 +1,11 @@
 ---
-name: Hash Submit Template. Please use LABELS!
-about: This is an issue template for submitting hashes, simply replace the parts with < > with the required info.
-title: "<Content i.e. New S4 Character Models> [<Hash Verified/Not Hash Verified>] [<Asset Type (xmodel, xanim, etc.)>]"
+name: Asset Hash Submission Template
+about: Use this template to submit asset hashes. Simply replace the information between the < > to match your submission.
+title: "<Content Description i.e. New S4 Character Models> [<Hash Verified/Not Hash Verified>] [<Asset Type (xmodel, xanim, ximage)>]"
 labels: ''
 assignees: ''
 ---
 
 ```
-<insert hashes here, i.e.: 31ef8a5491b998d,attach_t9_charm_space_helmet. Please keep different asset types and unverified hashes (custom names) to different issues. If you're stuck just look at previous issues that match this template!>
+< Insert hashes here between these lines! Keep different asset types and unverified hashes to separate Issues. >
 ```
