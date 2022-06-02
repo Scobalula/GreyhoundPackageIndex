@@ -77,7 +77,7 @@ namespace PackageIndexTool
         static void Decompile(PackageIndex index, string fileName)
         {
             // Info
-            Printer.WriteLine("INFO", String.Format("Decompiling {0}", Path.GetFileName(fileName)));
+            Printer.WriteLine("INFO", string.Format("Decompiling {0}", Path.GetFileName(fileName)));
 
             // Load it
             if(!index.Load(fileName))
@@ -94,100 +94,120 @@ namespace PackageIndexTool
                     writer.WriteLine("{0:x},{1}", entry.Key, entry.Value);
 
             // Info
-            Printer.WriteLine("INFO", String.Format("Decompiled successfully", fileName));
+            Printer.WriteLine("INFO", string.Format("Decompiled successfully", fileName));
         }
 
         static void CompileFromCSV(PackageIndex index, string fileName)
         {
-            // Info
-            Printer.WriteLine("INFO", String.Format("Compiling {0}", Path.GetFileName(fileName)));
+            StreamWriter collisionReport = null;
 
-            // Read Lines
-            string[] lines = File.ReadAllLines(fileName);
-
-            // Loop Lines
-            foreach(string line in lines)
+            try
             {
-                // Trim Line
-                string lineTrim = line.Trim();
+                // Info
+                Printer.WriteLine("INFO", string.Format("Compiling {0}", Path.GetFileName(fileName)));
 
-                // Check for comments
-                if(!lineTrim.StartsWith("#"))
+                // Read Lines
+                string[] lines = File.ReadAllLines(fileName);
+
+                // Loop Lines
+                foreach (string line in lines)
                 {
-                    // Split line
-                    string[] lineSplit = lineTrim.Split(',');
+                    // Trim Line
+                    string lineTrim = line.Trim();
 
-                    // Check for results
-                    if(lineSplit.Length > 1)
+                    // Check for comments
+                    if (!lineTrim.StartsWith("#"))
                     {
-                        // Try parse the value
-                        if(ulong.TryParse(lineSplit[0], NumberStyles.HexNumber, CultureInfo.CurrentCulture, out ulong id))
+                        // Split line
+                        string[] lineSplit = lineTrim.Split(',');
+
+                        // Check for results
+                        if (lineSplit.Length > 1)
                         {
-                            // Mask it
-                            id &= 0xFFFFFFFFFFFFFFF;
-
-                            // Check for collision
-                            if (index.Entries.ContainsKey(id))
+                            // Try parse the value
+                            if (ulong.TryParse(lineSplit[0], NumberStyles.HexNumber, CultureInfo.CurrentCulture, out ulong id))
                             {
-                                // Collision Hit
-                                Printer.WriteLine("WARNING", String.Format("Collision Detected: {0:x} - {1}", id, lineSplit[1]));
-                                // Skip
-                                continue;
-                            }
+                                // Mask it
+                                id &= 0xFFFFFFFFFFFFFFF;
 
-                            // Add to table
-                            index.Entries[id] = lineSplit[1];
+                                // Check for collision
+                                if (index.Entries.ContainsKey(id))
+                                {
+                                    // Create if it doesn't exist
+                                    if (collisionReport == null)
+                                        collisionReport = new StreamWriter(fileName + ".collisions.txt");
+                                    // Collision Hit
+                                    collisionReport.WriteLine("Collision Detected: {0:x} - {1}", id, lineTrim);
+                                }
+
+                                // Add to table
+                                index.Entries[id] = lineSplit[1];
+                            }
                         }
                     }
                 }
+
+                // Save
+                index.Save(Path.GetFileNameWithoutExtension(fileName) + ".wni");
+
+                // Info
+                Printer.WriteLine("INFO", string.Format("Compiled successfully", fileName));
             }
-
-            // Save
-            index.Save(Path.GetFileNameWithoutExtension(fileName) + ".wni");
-
-            // Info
-            Printer.WriteLine("INFO", String.Format("Compiled successfully", fileName));
+            finally
+            {
+                collisionReport?.Dispose();
+            }
         }
 
         static void CompileFromTXT(PackageIndex index, string fileName)
         {
-            // Info
-            Printer.WriteLine("INFO", String.Format("Compiling {0}", Path.GetFileName(fileName)));
+            StreamWriter collisionReport = null;
 
-            // Read Lines
-            string[] lines = File.ReadAllLines(fileName);
-
-            // Loop Lines
-            foreach (string line in lines)
+            try
             {
-                // Trim Line
-                string lineTrim = line.Trim();
+                // Info
+                Printer.WriteLine("INFO", string.Format("Compiling {0}", Path.GetFileName(fileName)));
 
-                // Check for comments
-                if (!lineTrim.StartsWith("#") && !String.IsNullOrWhiteSpace(lineTrim))
+                // Read Lines
+                string[] lines = File.ReadAllLines(fileName);
+
+                // Loop Lines
+                foreach (string line in lines)
                 {
-                    // Hash the string and mask it
-                    ulong id = FNV1a.Calculate64(lineTrim) & 0xFFFFFFFFFFFFFFF;
+                    // Trim Line
+                    string lineTrim = line.Trim();
 
-                    // Check for collision
-                    if (index.Entries.ContainsKey(id))
+                    // Check for comments
+                    if (!lineTrim.StartsWith("#") && !string.IsNullOrWhiteSpace(lineTrim))
                     {
-                        // Collision Hit
-                        Printer.WriteLine("WARNING", String.Format("Collision Detected: {0:x} - {1}", id, lineTrim));
-                        // Skip
-                        continue;
+                        // Hash the string and mask it
+                        ulong id = FNV1a.Calculate64(lineTrim) & 0xFFFFFFFFFFFFFFF;
+
+                        // Check for collision
+                        if (index.Entries.ContainsKey(id))
+                        {
+                            // Create if it doesn't exist
+                            if (collisionReport == null)
+                                collisionReport = new StreamWriter(fileName + ".collisions.txt");
+                            // Collision Hit
+                            collisionReport.WriteLine("Collision Detected: {0:x} - {1}", id, lineTrim);
+                        }
+
+                        // Add to table
+                        index.Entries[id] = lineTrim;
                     }
-
-                    // Add to table
-                    index.Entries[id] = lineTrim;
                 }
+
+                // Save
+                index.Save(Path.GetFileNameWithoutExtension(fileName) + ".wni");
+
+                // Info
+                Printer.WriteLine("INFO", String.Format("Compiled successfully", fileName));
             }
-
-            // Save
-            index.Save(Path.GetFileNameWithoutExtension(fileName) + ".wni");
-
-            // Info
-            Printer.WriteLine("INFO", String.Format("Compiled successfully", fileName));
+            finally
+            {
+                collisionReport?.Dispose();
+            }
         }
 
     }
