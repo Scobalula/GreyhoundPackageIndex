@@ -127,9 +127,6 @@ namespace PackageIndexTool
                             // Try parse the value
                             if (ulong.TryParse(lineSplit[0], NumberStyles.HexNumber, CultureInfo.CurrentCulture, out ulong id))
                             {
-                                // Mask it
-                                id &= 0xFFFFFFFFFFFFFFF;
-
                                 // Check for collision
                                 if (index.Entries.ContainsKey(id))
                                 {
@@ -181,7 +178,7 @@ namespace PackageIndexTool
                     if (!lineTrim.StartsWith("#") && !string.IsNullOrWhiteSpace(lineTrim))
                     {
                         // Hash the string and mask it
-                        ulong id = FNV1a.Calculate64(lineTrim) & 0xFFFFFFFFFFFFFFF;
+                        ulong id = FNV1a.Calculate64(lineTrim);
 
                         // Check for collision
                         if (index.Entries.ContainsKey(id))

@@ -49,7 +49,7 @@ namespace PackageIndexTool
                         // Loop Count
                         for (int i = 0; i < count; i++)
                             // Read ID and String
-                            Entries[internalReader.ReadUInt64() & 0xFFFFFFFFFFFFFFF] = ReadNullTerminatedString(internalReader);
+                            Entries[internalReader.ReadUInt64()] = ReadNullTerminatedString(internalReader);
                 }
             }
 
