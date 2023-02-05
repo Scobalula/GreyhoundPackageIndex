@@ -4,18 +4,28 @@
 
 The Greyhound Package Index is an ongoing community effort to supply [Greyhound](https://github.com/Scobalula/Greyhound) with meaningful filenames for assets across various Call of Duty titles. It is a continuation of [DTZxPorter's](https://github.com/dtzxporter) [CommunityNameDB](https://github.com/dtzxporter/CommunityNameDB).
 
-| Title | Package Indexes |
+| Index | Progress |
 |---|---|
-| Call of Duty: Black Ops Cold War | [strings](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_string.csv), [xanims](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xanims.csv), [ximages](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_ximages.csv), [xmaterials](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xmaterials.csv), [xmodels](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xmodels.csv), [xsounds](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xsounds.csv) |
-| Call of Duty: Black Ops 4 | [strings](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_string.csv), [xanims](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xanims.csv), [ximages](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_ximages.csv), [xmaterials](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xmaterials.csv), [xmodels](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xmodels.csv), [xsounds](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xsounds.csv) |
-| Call of Duty: Black Ops III | [sab](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/BO3/bo3_sab.csv) |
-| Call of Duty: Black Ops II | [ipak](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/BO2/bo2_ipak.csv), [sab](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/BO2/bo2_sab.csv) |
+xStrings | 76.18% |
+xAnims | 31.00% |
+xImages | 62.93% |
+xMaterials | 59.18% |
+xModels | 69.52% |
+xSounds | 48.20% (no BO4 ML) |
+
+| Title | Packages Used |
+|---|---|
+Vanguard | [xstrings](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xstrings.csv), [xsounds](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xsounds.csv) |
+Black Ops Cold War | [xstrings](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xstrings.csv), [xanims](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xanims.csv), [ximages](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_ximages.csv), [xmaterials](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xmaterials.csv), [xmodels](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xmodels.csv), [xsounds](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xsounds.csv) |
+Black Ops 4 | [xanims](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xanims.csv), [ximages](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_ximages.csv), [xmaterials](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xmaterials.csv), [xmodels](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xmodels.csv), [xsounds](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/FNV1A/fnv1a_xsounds.csv) |
+Black Ops III | [sab](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/BO3/bo3_sab.csv) |
+Black Ops II | [ipak](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/BO2/bo2_ipak.csv), [sab](https://github.com/Scobalula/GreyhoundPackageIndex/blob/master/PackageIndexSources/BO2/bo2_sab.csv) |
 
 ## Package Index Tool
 
 [Package Index Tool](https://github.com/Scobalula/GreyhoundPackageIndex/tree/master/PackageIndexTool) is used to convert package indexes between the `.WNI`, `.CSV`, and `.TXT` formats.
 
-The FNV-1a hash algorithm, provided by [DTZxPorter](https://github.com/dtzxporter), is used by both Black Ops Cold War and Black Ops 4.
+The FNV-1a hash algorithm, provided by [DTZxPorter](https://github.com/dtzxporter), is used by Black Ops 4, Black Ops Cold War and Vanguard.
 
 ```cpp
 const uint64_t FNVPrime = 0x100000001B3;
