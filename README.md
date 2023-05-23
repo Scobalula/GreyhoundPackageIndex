@@ -6,11 +6,11 @@ The Greyhound Package Index is an ongoing community effort to supply [Greyhound]
 
 | Index | Progress |
 |---|---|
-xAnims | 31.16% |
-xImages | 63.29% |
-xMaterials | 61.10% |
-xModels | 69.63% |
-xSounds | 35.54% |
+xAnims | 34.68% |
+xImages | 66.68% |
+xMaterials | 61.12% |
+xModels | 69.78% |
+xSounds | 35.55% |
 xStrings | 76.75% |
 
 | Title | Packages Used |
